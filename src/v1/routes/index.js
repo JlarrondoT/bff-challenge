@@ -10,6 +10,7 @@ router
         });
     })
     .get('/user', mercadoLibreController.getUser)
+    .get('/restrictions/:userId', mercadoLibreController.getUserRestrictions)
     .get('/level/:id', mercadoLibreController.getLevel)
     .get(
         '/purchases/:userId/:limit?/:offset?',

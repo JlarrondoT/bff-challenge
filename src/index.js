@@ -5,12 +5,6 @@ const apiV1 = require('./v1/routes/index');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-    res.json({
-        status: 200,
-    });
-});
-
 app.use('/api/v1', apiV1);
 
 app.listen(PORT, (error) => {

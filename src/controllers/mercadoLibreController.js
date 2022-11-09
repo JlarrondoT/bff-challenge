@@ -34,4 +34,16 @@ const getUserPurchases = async (req, res) => {
     res.json(purchases);
 };
 
-module.exports = { getUser, getLevel, getUserPurchases };
+const getUserRestrictions = async (req, res) => {
+    const userRestrictions =
+        await MercadolibreServiceInstance.getUserRestrictions(req.params.userId)
+            .catch((error) => {
+                return error;
+            })
+            .finally((result) => {
+                return result;
+            });
+    res.json(userRestrictions);
+};
+
+module.exports = { getUser, getLevel, getUserPurchases, getUserRestrictions };
