@@ -2,3 +2,4 @@
 .vscode/*
 .prettierrc.json
 /dist/*
+/coverage/*

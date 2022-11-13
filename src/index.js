@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use('/api/v1', apiV1);
 
-app.listen(PORT, (error) => {
+const server = app.listen(PORT, (error) => {
     if (!error) {
         console.log(
             'Server is Successfully Running, and App is listening on port ' +
@@ -16,3 +16,5 @@ app.listen(PORT, (error) => {
         );
     } else console.log("Error occurred, server can't start", error);
 });
+
+module.exports = { app, server };
