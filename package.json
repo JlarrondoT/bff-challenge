@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test": "jest --verbose --coverage",
+    "test": "jest --verbose --coverage --maxWorkers=1",
     "test:watch": "jest --verbose --silent --watch",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",

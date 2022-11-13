@@ -5,7 +5,7 @@ const getUser = async (req, res) => {
     let status = 200;
     const user = await MercadolibreServiceInstance.getUser()
         .catch((error) => {
-            status = error.status ? error.status : 500;
+            status = error.status;
             return error;
         })
         .finally((result) => {
@@ -20,7 +20,7 @@ const getLevel = async (req, res) => {
         req.params.id
     )
         .catch((error) => {
-            status = error.status ? error.status : 500;
+            status = error.status;
             return error;
         })
         .finally((result) => {
@@ -37,7 +37,7 @@ const getUserPurchases = async (req, res) => {
         req.query?.offset
     )
         .catch((error) => {
-            status = error.status ? error.status : 500;
+            status = error.status;
             return error;
         })
         .finally((result) => {
@@ -51,7 +51,7 @@ const getUserRestrictions = async (req, res) => {
     const userRestrictions =
         await MercadolibreServiceInstance.getUserRestrictions(req.params.userId)
             .catch((error) => {
-                status = error.status ? error.status : 500;
+                status = error.status;
                 return error;
             })
             .finally((result) => {
@@ -66,7 +66,7 @@ const getShipment = async (req, res) => {
         req.params.shipmentId
     )
         .catch((error) => {
-            status = error.status ? error.status : 500;
+            status = error.status;
             return error;
         })
         .finally((result) => {
@@ -81,7 +81,7 @@ const getPayment = async (req, res) => {
         req.params.paymentId
     )
         .catch((error) => {
-            status = error.status ? error.status : 500;
+            status = error.status;
             return error;
         })
         .finally((result) => {
