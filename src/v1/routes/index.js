@@ -10,11 +10,13 @@ router
         });
     })
     .get('/user', mercadoLibreController.getUser)
-    .get('/restrictions/:userId', mercadoLibreController.getUserRestrictions)
-    .get('/level/:id', mercadoLibreController.getLevel)
     .get(
-        '/purchases/:userId/:limit?/:offset?',
-        mercadoLibreController.getUserPurchases
-    );
+        '/user/:userId/restrictions/',
+        mercadoLibreController.getUserRestrictions
+    )
+    .get('/user/:userId/purchases/', mercadoLibreController.getUserPurchases)
+    .get('/level/:id', mercadoLibreController.getLevel)
+    .get('/shipment/:shipmentId', mercadoLibreController.getShipment)
+    .get('/payment/:paymentId', mercadoLibreController.getPayment);
 
 module.exports = router;
